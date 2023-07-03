@@ -1,13 +1,15 @@
 package com.selvaraj.brazil.springselenium.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class User {
 
     private Address address;
     private Salary salary;
 
-    public User(Address address, Salary salary) {
-        this.address = address;
-        this.salary = salary;
+    public User() {
+
     }
 
     public void printDetails() {
