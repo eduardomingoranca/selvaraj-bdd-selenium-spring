@@ -1,5 +1,6 @@
 package com.selvaraj.brazil.springselenium.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -8,8 +9,14 @@ public class User {
     private Address address;
     private Salary salary;
 
-    public User() {
+    @Autowired
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 
+    @Autowired
+    public void setSalary(Salary salary) {
+        this.salary = salary;
     }
 
     public void printDetails() {
