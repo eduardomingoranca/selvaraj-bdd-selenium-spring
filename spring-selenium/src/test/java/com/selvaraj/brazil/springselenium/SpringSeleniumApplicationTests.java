@@ -1,7 +1,6 @@
 package com.selvaraj.brazil.springselenium;
 
-import com.github.javafaker.Faker;
-import com.selvaraj.brazil.springselenium.model.User;
+import com.selvaraj.brazil.springselenium.model.Television;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,14 +9,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 class SpringSeleniumApplicationTests {
 
 	@Autowired
-	private User user;
-
-	@Autowired
-	private Faker faker;
+	private Television tv;
 
 	@Test
 	void contextLoads() {
-		this.user.printDetails();
+		this.tv.playMovie();
 	}
 
 }
