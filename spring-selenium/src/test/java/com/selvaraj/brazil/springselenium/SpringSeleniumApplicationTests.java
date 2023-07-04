@@ -25,7 +25,7 @@ class SpringSeleniumApplicationTests {
 
 	@Test
 	void contextLoads() {
-		System.out.println(this.path);
+		this.user.printDetails();
 	}
 
 }
