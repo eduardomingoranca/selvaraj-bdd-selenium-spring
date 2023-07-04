@@ -1,12 +1,10 @@
 package com.selvaraj.brazil.springselenium;
 
+import com.github.javafaker.Faker;
 import com.selvaraj.brazil.springselenium.model.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.List;
 
 @SpringBootTest
 class SpringSeleniumApplicationTests {
@@ -14,18 +12,13 @@ class SpringSeleniumApplicationTests {
 	@Autowired
 	private User user;
 
-	@Value("${TEST_URL:https://www.google.com}")
-	private String path;
-
-	@Value("${fruits}")
-	private List<String> fruits;
-
-	@Value("${myusername}")
-	private String username;
+	@Autowired
+	private Faker faker;
 
 	@Test
 	void contextLoads() {
-		this.user.printDetails();
+//		Faker faker = new Faker();
+		System.out.println(faker.name().firstName());
 	}
 
 }
