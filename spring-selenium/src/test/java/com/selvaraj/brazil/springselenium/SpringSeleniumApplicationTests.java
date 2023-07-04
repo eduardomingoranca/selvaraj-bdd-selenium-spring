@@ -14,7 +14,7 @@ class SpringSeleniumApplicationTests {
 	@Autowired
 	private User user;
 
-	@Value("${PATH}")
+	@Value("${TEST_URL:https://www.google.com}")
 	private String path;
 
 	@Value("${fruits}")
@@ -25,9 +25,7 @@ class SpringSeleniumApplicationTests {
 
 	@Test
 	void contextLoads() {
-		System.out.println(this.fruits);
-		System.out.println(this.fruits.size());
-		System.out.println(this.username);
+		System.out.println(this.path);
 	}
 
 }
