@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
+import static org.openqa.selenium.Keys.TAB;
+
 public class SearchComponent extends Base {
 
     @FindBy(name = "q")
@@ -16,6 +18,7 @@ public class SearchComponent extends Base {
 
     public void search(final String keyword) {
         this.searchBox.sendKeys(keyword);
+        this.searchBox.sendKeys(TAB);
         this.searchBtns
                 .stream()
                 .filter(e -> e.isDisplayed() && e.isEnabled())
