@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import static io.github.bonigarcia.wdm.WebDriverManager.chromedriver;
-import static java.time.Duration.ofSeconds;
 
 @Configuration
 public class WebDriverConfig {
@@ -18,13 +17,13 @@ public class WebDriverConfig {
 
     @Bean
     public WebDriver chromeDriver() {
-        chromedriver().driverVersion("77.0.3865.40").setup();
+        chromedriver().version("113.0.5672.63").setup();
         return new ChromeDriver();
     }
 
     @Bean
     public WebDriverWait webDriverWait(WebDriver webDriver) {
-        return new WebDriverWait(webDriver, ofSeconds(this.timeout));
+        return new WebDriverWait(webDriver, this.timeout);
     }
 
 }
