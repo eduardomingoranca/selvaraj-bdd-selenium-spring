@@ -5,6 +5,7 @@ import com.selvaraj.brazil.springselenium.page.google.GooglePage;
 import com.selvaraj.brazil.springselenium.util.ScreenShotUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 
 import java.io.IOException;
 
@@ -15,6 +16,7 @@ public class GoogleTest extends SpringBaseTestNGTest {
     @Autowired
     private GooglePage googlePage;
 
+    @Lazy
     @Autowired
     private ScreenShotUtil screenShotUtil;
 
