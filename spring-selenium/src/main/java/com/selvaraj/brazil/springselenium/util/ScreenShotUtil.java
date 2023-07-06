@@ -1,6 +1,5 @@
 package com.selvaraj.brazil.springselenium.util;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TakesScreenshot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -19,12 +18,12 @@ public class ScreenShotUtil {
     @Autowired
     private TakesScreenshot driver;
 
-    @Value("${screenshot.path}/img.png")
+    @Value("${screenshot.path}")
     private Path path;
 
-    public void takeScreenShot() throws IOException {
+    public void takeScreenShot(final String imgName) throws IOException {
         File sourceFile = this.driver.getScreenshotAs(FILE);
-        copy(sourceFile, this.path.toFile());
+        copy(sourceFile, this.path.resolve(imgName).toFile());
     }
 
 }
