@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Primary;
 
 import static io.github.bonigarcia.wdm.WebDriverManager.chromedriver;
 import static io.github.bonigarcia.wdm.WebDriverManager.firefoxdriver;
@@ -26,6 +27,7 @@ public class WebDriverConfig {
     }
 
     @Bean
+    @Primary
     public WebDriver firefoxDriver() {
         firefoxdriver().setup();
         return new FirefoxDriver();
