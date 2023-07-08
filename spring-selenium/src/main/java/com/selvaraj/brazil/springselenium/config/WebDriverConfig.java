@@ -3,8 +3,6 @@ package com.selvaraj.brazil.springselenium.config;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
@@ -20,9 +18,6 @@ import static io.github.bonigarcia.wdm.WebDriverManager.firefoxdriver;
 @Profile("!remote")
 public class WebDriverConfig {
 
-    @Value("${default.timeout:30}")
-    private int timeout;
-
     @Bean
     @ConditionalOnProperty(name = "browser", havingValue = "firefox")
     public WebDriver firefoxDriver() {
@@ -35,11 +30,6 @@ public class WebDriverConfig {
     public WebDriver chromeDriver() {
         chromedriver().version("113.0.5672.63").setup();
         return new ChromeDriver();
-    }
-
-    @Bean
-    public WebDriverWait webDriverWait(WebDriver webDriver) {
-        return new WebDriverWait(webDriver, this.timeout);
     }
 
 }
