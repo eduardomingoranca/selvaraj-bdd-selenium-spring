@@ -1,11 +1,11 @@
 package com.selvaraj.brazil.springselenium.page.google;
 
+import com.selvaraj.brazil.springselenium.annotation.Page;
 import com.selvaraj.brazil.springselenium.page.Base;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
-@Component
+@Page
 public class GooglePage extends Base {
 
     @Autowired

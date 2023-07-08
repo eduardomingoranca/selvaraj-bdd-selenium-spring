@@ -1,10 +1,10 @@
 package com.selvaraj.brazil.springselenium.config;
 
 import com.github.javafaker.Faker;
+import com.selvaraj.brazil.springselenium.annotation.LazyConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
-@Configuration
+@LazyConfiguration
 public class FakerConfig {
 
     @Bean

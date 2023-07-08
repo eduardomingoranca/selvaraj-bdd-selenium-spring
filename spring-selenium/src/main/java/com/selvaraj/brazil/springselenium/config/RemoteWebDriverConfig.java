@@ -1,5 +1,6 @@
 package com.selvaraj.brazil.springselenium.config;
 
+import com.selvaraj.brazil.springselenium.annotation.LazyConfiguration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,9 +16,9 @@ import java.net.URL;
 import static org.openqa.selenium.remote.DesiredCapabilities.chrome;
 import static org.openqa.selenium.remote.DesiredCapabilities.firefox;
 
-@Lazy
-@Configuration
+
 @Profile("remote")
+@LazyConfiguration
 public class RemoteWebDriverConfig {
 
     @Value("${selenium.grid.url}")
