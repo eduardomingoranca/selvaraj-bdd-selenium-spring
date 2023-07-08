@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.Scope;
 
 import static io.github.bonigarcia.wdm.WebDriverManager.chromedriver;
 import static io.github.bonigarcia.wdm.WebDriverManager.firefoxdriver;
@@ -24,6 +25,7 @@ public class WebDriverConfig {
     }
 
     @Bean
+    @Scope("prototype")
     @ConditionalOnMissingBean
     public WebDriver chromeDriver() {
         chromedriver().version("113.0.5672.63").setup();
