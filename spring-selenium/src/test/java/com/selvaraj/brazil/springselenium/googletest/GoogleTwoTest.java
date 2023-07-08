@@ -9,12 +9,9 @@ import org.springframework.context.annotation.Lazy;
 
 import java.io.IOException;
 
-import static com.google.common.util.concurrent.Uninterruptibles.sleepUninterruptibly;
-import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.testng.Assert.assertTrue;
 
-public class GoogleTest extends SpringBaseTestNGTest {
-
+public class GoogleTwoTest extends SpringBaseTestNGTest {
     @Autowired
     private GooglePage googlePage;
 
@@ -27,12 +24,9 @@ public class GoogleTest extends SpringBaseTestNGTest {
         this.googlePage.goTo();
         assertTrue(this.googlePage.isAt());
 
-        sleepUninterruptibly(3, SECONDS);
-
-        this.googlePage.getSearchComponent().search("environment ");
+        this.googlePage.getSearchComponent().search("selenium ");
         assertTrue(this.googlePage.getSearchResult().isAt());
         assertTrue(this.googlePage.getSearchResult().getCount() > 2);
         this.screenShotUtil.takeScreenShot();
     }
-
 }
