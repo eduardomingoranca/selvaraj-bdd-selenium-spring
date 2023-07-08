@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Profile;
 
 import java.net.URL;
 
@@ -17,6 +18,7 @@ import static org.openqa.selenium.remote.DesiredCapabilities.firefox;
 
 @Lazy
 @Configuration
+@Profile("remote")
 public class RemoteWebDriverConfig {
 
     @Value("${selenium.grid.url}")
