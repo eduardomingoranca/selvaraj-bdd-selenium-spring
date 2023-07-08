@@ -25,7 +25,7 @@ public class WebDriverConfig {
     }
 
     @Bean
-    @Scope("prototype")
+    @Scope("browserscope")
     @ConditionalOnMissingBean
     public WebDriver chromeDriver() {
         chromedriver().version("113.0.5672.63").setup();
