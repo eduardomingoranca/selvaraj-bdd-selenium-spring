@@ -6,6 +6,7 @@ import com.selvaraj.brazil.springselenium.kelvin.service.ScreenshotService;
 import com.selvaraj.brazil.springselenium.page.google.GooglePage;
 import org.junit.jupiter.api.Test;
 
+
 import java.io.IOException;
 
 import static org.testng.Assert.assertTrue;

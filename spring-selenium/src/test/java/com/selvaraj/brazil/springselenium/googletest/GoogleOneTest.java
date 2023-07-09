@@ -3,9 +3,9 @@ package com.selvaraj.brazil.springselenium.googletest;
 import com.selvaraj.brazil.springselenium.SpringBaseTestNGTest;
 import com.selvaraj.brazil.springselenium.page.google.GooglePage;
 import com.selvaraj.brazil.springselenium.kelvin.service.ScreenshotService;
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
 

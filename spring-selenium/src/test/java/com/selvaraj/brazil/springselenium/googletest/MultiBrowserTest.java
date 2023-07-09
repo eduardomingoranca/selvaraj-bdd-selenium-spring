@@ -1,10 +1,10 @@
 package com.selvaraj.brazil.springselenium.googletest;
 
 import com.selvaraj.brazil.springselenium.SpringBaseTestNGTest;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.testng.annotations.Test;
 
 public class MultiBrowserTest extends SpringBaseTestNGTest {
     @Autowired
