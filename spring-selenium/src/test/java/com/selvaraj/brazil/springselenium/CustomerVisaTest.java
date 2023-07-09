@@ -6,6 +6,7 @@ import com.selvaraj.brazil.springselenium.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.annotations.Test;
 
+import java.sql.Date;
 import java.util.List;
 
 import static java.time.ZoneId.systemDefault;
@@ -19,7 +20,8 @@ public class CustomerVisaTest extends SpringBaseTestNGTest{
 
     @Test
     public void visaTest() {
-        List<Customer> customers = this.repository.findByFirstNameStartingWith("Mi")
+        List<Customer> customers = this.repository.findByDobBetween(Date.valueOf("1995-01-01"),
+                        Date.valueOf("1999-01-01"))
                 .stream()
                 .limit(3)
                 .toList();
