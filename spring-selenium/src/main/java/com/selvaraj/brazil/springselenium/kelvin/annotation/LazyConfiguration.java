@@ -1,8 +1,7 @@
-package com.selvaraj.brazil.springselenium.annotation;
+package com.selvaraj.brazil.springselenium.kelvin.annotation;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
@@ -12,11 +11,10 @@ import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 @Lazy
-@Component
-@Scope("prototype")
+@Configuration
 @Documented
 @Target({TYPE})
 @Retention(RUNTIME)
-public @interface Page {
+public @interface LazyConfiguration {
 
 }

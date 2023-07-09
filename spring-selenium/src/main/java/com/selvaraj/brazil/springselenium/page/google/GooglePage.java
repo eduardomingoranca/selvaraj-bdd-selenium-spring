@@ -1,6 +1,6 @@
 package com.selvaraj.brazil.springselenium.page.google;
 
-import com.selvaraj.brazil.springselenium.annotation.Page;
+import com.selvaraj.brazil.springselenium.kelvin.annotation.Page;
 import com.selvaraj.brazil.springselenium.page.Base;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

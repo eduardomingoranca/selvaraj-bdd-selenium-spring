@@ -1,4 +1,4 @@
-package com.selvaraj.brazil.springselenium.config;
+package com.selvaraj.brazil.springselenium.kelvin.scope;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;

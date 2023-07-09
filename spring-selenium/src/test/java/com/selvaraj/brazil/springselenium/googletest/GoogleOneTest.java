@@ -2,7 +2,7 @@ package com.selvaraj.brazil.springselenium.googletest;
 
 import com.selvaraj.brazil.springselenium.SpringBaseTestNGTest;
 import com.selvaraj.brazil.springselenium.page.google.GooglePage;
-import com.selvaraj.brazil.springselenium.util.ScreenShotUtil;
+import com.selvaraj.brazil.springselenium.kelvin.service.ScreenshotService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -18,7 +18,7 @@ public class GoogleOneTest extends SpringBaseTestNGTest {
 
     @Lazy
     @Autowired
-    private ScreenShotUtil screenShotUtil;
+    private ScreenshotService screenshotService;
 
     @Test
     public void googleTest() throws IOException {
@@ -28,7 +28,7 @@ public class GoogleOneTest extends SpringBaseTestNGTest {
         this.googlePage.getSearchComponent().search("spring boot");
         assertTrue(this.googlePage.getSearchResult().isAt());
         assertTrue(this.googlePage.getSearchResult().getCount() > 2);
-        this.screenShotUtil.takeScreenShot();
+        this.screenshotService.takeScreenShot();
         this.googlePage.close();
     }
 

@@ -1,6 +1,6 @@
 package com.selvaraj.brazil.springselenium.page.google;
 
-import com.selvaraj.brazil.springselenium.annotation.PageFragment;
+import com.selvaraj.brazil.springselenium.kelvin.annotation.PageFragment;
 import com.selvaraj.brazil.springselenium.page.Base;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

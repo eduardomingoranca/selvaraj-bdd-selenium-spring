@@ -1,6 +1,6 @@
-package com.selvaraj.brazil.springselenium.config;
+package com.selvaraj.brazil.springselenium.kelvin.config;
 
-import com.selvaraj.brazil.springselenium.annotation.LazyConfiguration;
+import com.selvaraj.brazil.springselenium.kelvin.annotation.LazyConfiguration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Value;
