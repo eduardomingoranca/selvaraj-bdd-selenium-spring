@@ -19,7 +19,7 @@ public class CustomerVisaTest extends SpringBaseTestNGTest{
 
     @Test
     public void visaTest() {
-        List<Customer> customers = this.repository.findAll()
+        List<Customer> customers = this.repository.findByFirstNameStartingWith("Mi")
                 .stream()
                 .limit(3)
                 .toList();
