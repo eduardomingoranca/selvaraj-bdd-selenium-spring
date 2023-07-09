@@ -1,18 +1,18 @@
 package com.selvaraj.brazil.springselenium.window;
 
 import com.selvaraj.brazil.springselenium.SpringBaseTestNGTest;
-import com.selvaraj.brazil.springselenium.kelvin.service.WindowSwitchService;
 import com.selvaraj.brazil.springselenium.page.window.MainPage;
 import com.selvaraj.brazil.springselenium.page.window.PageA;
 import com.selvaraj.brazil.springselenium.page.window.PageB;
+import com.selvaraj.brazil.springselenium.page.window.PageC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.TestPropertySource;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 @TestPropertySource(properties = "browser=firefox")
 public class WindowSwitchTest extends SpringBaseTestNGTest {
-
     @Autowired
     private MainPage mainPage;
 
@@ -23,7 +23,7 @@ public class WindowSwitchTest extends SpringBaseTestNGTest {
     private PageB pageB;
 
     @Autowired
-    private WindowSwitchService switchService;
+    private PageC pageC;
 
     @BeforeClass
     public void setUp() {
@@ -32,12 +32,23 @@ public class WindowSwitchTest extends SpringBaseTestNGTest {
         this.mainPage.launchAllWindows();
     }
 
-    @Test
-    public void switchTest() {
-        this.switchService.switchByTitle("Page A");
-        this.pageA.addToArea("hi page A");
-        this.switchService.switchByIndex(2);
-        this.pageB.addToArea("Hello page B");
+    @Test(dataProvider = "getData")
+    public void switchTest(int index) {
+        this.pageA.addToArea(index + "\n");
+        this.pageB.addToArea((index * 2) + "\n");
+        this.pageC.addToArea((index * 3) + "\n");
+    }
+
+    @DataProvider
+    public Object[] getData() {
+        return new Object[] {
+                3,
+                4,
+                1,
+                5,
+                6,
+                2
+        };
     }
 
 }
