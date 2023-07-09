@@ -6,8 +6,6 @@ import com.selvaraj.brazil.springselenium.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.annotations.Test;
 
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.List;
 
 import static java.time.ZoneId.systemDefault;
