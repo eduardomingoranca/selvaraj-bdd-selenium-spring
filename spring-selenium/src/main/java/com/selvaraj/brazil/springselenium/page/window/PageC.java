@@ -1,11 +1,11 @@
 package com.selvaraj.brazil.springselenium.page.window;
 
-import com.selvaraj.brazil.springselenium.kelvin.annotation.Page;
+import com.selvaraj.brazil.springselenium.kelvin.annotation.Window;
 import com.selvaraj.brazil.springselenium.page.Base;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-@Page
+@Window("Page C")
 public class PageC extends Base {
 
     @FindBy(id = "area")
