@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
+import static org.openqa.selenium.support.ui.ExpectedConditions.numberOfWindowsToBe;
+
 @Page
 public class MainPage extends Base {
 
@@ -18,8 +20,9 @@ public class MainPage extends Base {
     }
 
     public void launchAllWindows() {
-        for (WebElement link : links) {
-            link.click();
+        for (int i = 0; i < links.size(); i++) {
+            links.get(i).click();
+            this.wait.until(numberOfWindowsToBe(i + 2));
         }
     }
 

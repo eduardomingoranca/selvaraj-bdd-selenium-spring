@@ -37,7 +37,7 @@ public class WindowSwitchTest extends SpringBaseTestNGTest {
         this.switchService.switchByTitle("Page A");
         this.pageA.addToArea("hi page A");
         this.switchService.switchByIndex(2);
-        this.pageA.addToArea("Hello page B");
+        this.pageB.addToArea("Hello page B");
     }
 
 }
