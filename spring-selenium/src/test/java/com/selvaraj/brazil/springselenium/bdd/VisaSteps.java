@@ -7,13 +7,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import static java.time.LocalDate.parse;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
-@SpringBootTest
 public class VisaSteps {
 
     @LazyAutowired
