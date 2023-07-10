@@ -8,7 +8,7 @@ import org.testng.annotations.DataProvider;
         strict = true,
         features = "classpath:features",
         glue = "com.selvaraj.brazil.springselenium.bdd",
-        tags = { "not @smoke" },
+        tags = { "@smoke" },
         plugin = {
                 "pretty",
                 "html:/Users/eduar/Workspace/temp"
