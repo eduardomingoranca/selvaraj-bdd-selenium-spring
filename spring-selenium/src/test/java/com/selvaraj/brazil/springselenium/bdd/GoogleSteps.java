@@ -1,7 +1,6 @@
 package com.selvaraj.brazil.springselenium.bdd;
 
 import com.selvaraj.brazil.springselenium.page.google.GooglePage;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
