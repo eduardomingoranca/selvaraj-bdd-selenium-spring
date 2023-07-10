@@ -25,7 +25,7 @@ public class GoogleSteps {
         this.googlePage.getSearchComponent().search(keyword);
     }
 
-    @And("I click on the search button")
+    @Then("I should see search results page")
     public void clickSearch() {
         assertTrue(this.googlePage.getSearchResult().isAt());
     }
