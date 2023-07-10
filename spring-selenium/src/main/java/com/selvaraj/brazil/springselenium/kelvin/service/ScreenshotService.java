@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 
+import static org.openqa.selenium.OutputType.BYTES;
 import static org.openqa.selenium.OutputType.FILE;
 import static org.springframework.util.FileCopyUtils.copy;
 
@@ -32,6 +33,10 @@ public class ScreenshotService {
         File sourceFile = this.ctx.getBean(TakesScreenshot.class).getScreenshotAs(FILE);
         String imageName = faker.name().firstName();
         copy(sourceFile, this.path.resolve(imageName + ".png").toFile());;
+    }
+
+    public byte[] getScreenshot() {
+        return this.ctx.getBean(TakesScreenshot.class).getScreenshotAs(BYTES);
     }
 
 }
