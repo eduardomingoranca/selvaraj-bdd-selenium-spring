@@ -4,6 +4,7 @@ import com.selvaraj.brazil.springselenium.SpringBaseTestNGTest;
 import com.selvaraj.brazil.springselenium.entity.Customer;
 import com.selvaraj.brazil.springselenium.page.visa.VisaRegistrationPage;
 import com.selvaraj.brazil.springselenium.repository.CustomerRepository;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.ITestContext;
 import org.testng.annotations.DataProvider;
@@ -12,8 +13,11 @@ import org.testng.annotations.Test;
 import java.sql.Date;
 
 import static java.time.ZoneId.systemDefault;
+import static org.slf4j.LoggerFactory.getLogger;
 
 public class CustomerVisaTest extends SpringBaseTestNGTest {
+    public static final Logger logger = getLogger(CustomerVisaTest.class);
+
     @Autowired
     private VisaRegistrationPage registrationPage;
 
@@ -30,7 +34,8 @@ public class CustomerVisaTest extends SpringBaseTestNGTest {
         this.registrationPage.setComments(c.getComments());
         this.registrationPage.submit();
 
-        System.out.println(this.registrationPage.getConfirmationNumber());
+        logger.info("Request confirmation # INFO : " + this.registrationPage.getConfirmationNumber());
+        logger.warn("Request confirmation # WARN : " + this.registrationPage.getConfirmationNumber());
     }
 
     @DataProvider
