@@ -5,8 +5,10 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
+        strict = true,
         features = "classpath:features",
         glue = "com.selvaraj.brazil.springselenium.bdd",
+        tags = { "not @smoke" },
         plugin = {
                 "pretty",
                 "html:/Users/eduar/Workspace/temp"
